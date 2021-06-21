@@ -9,7 +9,6 @@
                 <th scope="col">Preço</th>
                 <th scope="col">Tamanho</th>
                 <th scope="col">Estoque</th>
-                <th scope="col">Imagem</th>
                 <th scope="col">Data Criação</th>
                 <th scope="col">Data Atualização</th>
                 <th colspan="2"></th>
@@ -23,11 +22,10 @@
                 <td>{{ item.price }}</td>
                 <td>{{ item.heitgt_type }}</td>
                 <td>{{ item.stock }}</td>
-                <td>{{ item.image }}</td>
                 <td>{{ item.created_at }}</td>
                 <td>{{ item.updated_at }}</td>
-                <td><a href="#"><button class="btn">Editar</button></a></td>
-                <td><a href="#"><button class="btn">Deletar</button></a></td>
+                <td><a href="{% url 'update_narguile' id=item.id %}"><button class="btn">Editar</button></a></td>
+                <td><a href="{% url 'delete_narguile' id=item.id %}"><button class="btn">Deletar</button></a></td>
             </tr>
             {% endfor %}
         </tbody>
@@ -35,7 +33,7 @@
     </table>
 
     <div class="bottom mt-5">
-        <a href="#"><button class="btn btn-secondary me-md-2" type="button">Criar Produto</button></a>
+        <a href="/narguile/create"><button class="btn btn-secondary me-md-2" type="button">Criar Produto</button></a>
         <a href="/"><button class="btn btn-secondary me-md-2" type="button">Voltar para Inicio</button></a>
     </div>
 </div>

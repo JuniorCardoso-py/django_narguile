@@ -1,4 +1,8 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block link %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+{% endblock %}
 {% block content%}
 <div class="container">
     <table class="table mt-5">
@@ -24,8 +28,8 @@
                 <td>{{ item.stock }}</td>
                 <td>{{ item.created_at }}</td>
                 <td>{{ item.updated_at }}</td>
-                <td><a href="{% url 'update_narguile' id=item.id %}"><button class="btn">Editar</button></a></td>
-                <td><a href="{% url 'delete_narguile' id=item.id %}"><button class="btn">Deletar</button></a></td>
+                <td><a href="{% url 'update_narguile' id=item.id %}"><button class="btn-warning">Editar</button></a></td>
+                <td><a href="{% url 'delete_narguile' id=item.id %}"><button class="btn-danger">Deletar</button></a></td>
             </tr>
             {% endfor %}
         </tbody>
@@ -33,7 +37,7 @@
     </table>
 
     <div class="bottom mt-5">
-        <a href="/narguile/create"><button class="btn btn-secondary me-md-2" type="button">Criar Produto</button></a>
+        <a href="/narguile/create"><button class="btn btn-secondary me-md-2" id="create_button" type="button">Criar Produto</button></a>
         <a href="/"><button class="btn btn-secondary me-md-2" type="button">Voltar para Inicio</button></a>
     </div>
 </div>

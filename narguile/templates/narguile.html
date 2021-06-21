@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content%}
+<div class="container">
+    <table class="table mt-5">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Preço</th>
+                <th scope="col">Tamanho</th>
+                <th scope="col">Estoque</th>
+                <th scope="col">Imagem</th>
+                <th scope="col">Data Criação</th>
+                <th scope="col">Data Atualização</th>
+                <th colspan="2"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in narguile %}
+            <tr>
+                <th scope="row">{{ item.id }}</th>
+                <td>{{ item.name }}</td>
+                <td>{{ item.price }}</td>
+                <td>{{ item.heitgt_type }}</td>
+                <td>{{ item.stock }}</td>
+                <td>{{ item.image }}</td>
+                <td>{{ item.created_at }}</td>
+                <td>{{ item.updated_at }}</td>
+                <td><a href="#"><button class="btn">Editar</button></a></td>
+                <td><a href="#"><button class="btn">Deletar</button></a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+
+    <div class="bottom mt-5">
+        <a href="#"><button class="btn btn-secondary me-md-2" type="button">Criar Produto</button></a>
+        <a href="/"><button class="btn btn-secondary me-md-2" type="button">Voltar para Inicio</button></a>
+    </div>
+</div>
+{% endblock%}

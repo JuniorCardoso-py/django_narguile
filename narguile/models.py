@@ -9,3 +9,4 @@ class Narguile(BaseModel):
     heitgt_type = models.CharField(max_length=30)
     stock = models.IntegerField()
     image = models.ImageField()
+
